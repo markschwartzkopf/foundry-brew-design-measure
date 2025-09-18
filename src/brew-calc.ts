@@ -346,7 +346,11 @@ function updateUI() {
   for (const key in inputsMap) {
     const typedKey = key as keyof AppState;
     const input = inputsMap[typedKey] as HTMLInputElement;
-    input.value = state[typedKey] === null ? "" : String(state[typedKey]);
+    if (typedKey === "brewRatio") {
+      console.log(input);
+      input.value = state[typedKey] === null ? "" : `${state[typedKey]}:1`;
+    } else
+      input.value = state[typedKey] === null ? "" : String(state[typedKey]);
   }
   allInputs.forEach((input) => {
     if (state.mode === "design") {
