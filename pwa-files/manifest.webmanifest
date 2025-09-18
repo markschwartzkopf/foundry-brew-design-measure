@@ -1,0 +1,30 @@
+{
+  "id": "/foundry-brew-design-measure/",
+  "name": "Foundry Brew Calculator",
+  "short_name": "Brew Calc",
+  "start_url": "/foundry-brew-design-measure/",
+  "scope": "/foundry-brew-design-measure/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
