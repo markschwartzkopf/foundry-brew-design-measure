@@ -1,6 +1,6 @@
 {
   "name": "foundry-brew-design-measure",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Browser-based brew design and measurement tool for Foundry Coffee House",
   "scripts": {
     "windows-open": "cmd /c start \"\" \"dist/index.html\"",
