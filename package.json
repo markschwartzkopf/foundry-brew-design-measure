@@ -1,0 +1,35 @@
+{
+  "name": "foundry-brew-design-measure",
+  "version": "1.0.0",
+  "description": "Browser-based brew design and measurement tool for Foundry Coffee House",
+  "scripts": {
+    "windows-open": "cmd /c start \"\" \"dist/brew-calc.html\"",
+    "build": "run-s build:*",
+    "build:esbuild": "esbuild src/brew-calc.ts --bundle --format=esm --target=es2020 --outfile=bundle/brew-calc.js",
+    "build:copy": "cpy \"src/**/*.{html,css}\" bundle --parents",
+    "build:inline": "mkdirp dist && inline-source bundle/brew-calc.html --root bundle --compress false > dist/brew-calc.html",
+    "watch": "run-p watch:*",
+    "watch:esbuild": "esbuild src/brew-calc.ts --bundle --format=esm --target=es2020 --outfile=bundle/brew-calc.js --watch",
+    "watch:copy": "chokidar \"src/**/*.{html,css}\" -c \"npm run build:copy\" --initial --debounce 200 --await-write-finish 200",
+    "watch:inline": "chokidar \"bundle/**/*\" -c \"npm run build:inline\" --debounce 200",
+    "lint": "eslint \"src/**/*.{ts,tsx,js}\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "author": "Mark Schwartzkopf",
+  "license": "AGPL-3.0-or-later",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "chokidar-cli": "^3.0.0",
+    "cpy-cli": "^5.0.0",
+    "esbuild": "^0.25.9",
+    "eslint": "^9.34.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "inline-source": "^8.0.3",
+    "inline-source-cli": "^2.0.0",
+    "mkdirp": "^3.0.1",
+    "npm-run-all2": "^7.0.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0"
+  }
+}
