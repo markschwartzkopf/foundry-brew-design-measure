@@ -5,7 +5,7 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <meta name="theme-color" content="#111111" />
     <link rel="icon" href="icons/icon-192.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Brew Calc" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -19,6 +19,7 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        row-gap: 0.5em;
       }
       #header {
         display: flex;
@@ -39,6 +40,12 @@
       #values > label {
         justify-self: end;
         text-align: right;
+      }
+      #values input:disabled {
+        border: none;
+        background: none;
+        color: inherit;
+        font-size: 1em;
       }
       fieldset {
         border-radius: 0.5em;
@@ -85,7 +92,7 @@
       <label for="bev-mass">Beverage Mass (g):</label>
       <input id="bev-mass" type="number" />
       <label for="brew-ratio">Brew Ratio:</label>
-      <input id="brew-ratio" type="number" />
+      <input id="brew-ratio" type="text" />
       <label for="extraction">Extraction (%):</label>
       <input id="extraction" type="number" />
       <label for="tds">TDS (%):</label>
@@ -438,7 +445,11 @@ function updateUI() {
   for (const key in inputsMap) {
     const typedKey = key;
     const input = inputsMap[typedKey];
-    input.value = state[typedKey] === null ? "" : String(state[typedKey]);
+    if (typedKey === "brewRatio") {
+      console.log(input);
+      input.value = state[typedKey] === null ? "" : `${state[typedKey]}:1`;
+    } else
+      input.value = state[typedKey] === null ? "" : String(state[typedKey]);
   }
   allInputs.forEach((input) => {
     if (state.mode === "design") {
