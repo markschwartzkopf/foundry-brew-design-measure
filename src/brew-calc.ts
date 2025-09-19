@@ -124,16 +124,16 @@ let state: AppState = {
   mode: "design",
   dose: 200,
   brewMass: 3785,
-  bevMass: 3408,
-  brewRatio: 21.1,
-  ext: 22,
-  tds: 1.16,
+  bevMass: 3405,
+  brewRatio: 19.9,
+  ext: 21.8,
+  tds: 1.22,
   basketFilterMass: null,
   basketFilterCoffeeMass: null,
   finalBasketMass: null,
   emptyContainerMass: null,
   fullContainerMass: null,
-  targetBrewGallons: 1,
+  targetBrewGallons: null,
   targetBrewMass: null,
   flowRateSetting: null,
   correctedFlowRateSetting: null,
@@ -347,7 +347,6 @@ function updateUI() {
     const typedKey = key as keyof AppState;
     const input = inputsMap[typedKey] as HTMLInputElement;
     if (typedKey === "brewRatio") {
-      console.log(input);
       input.value = state[typedKey] === null ? "" : `${state[typedKey]}:1`;
     } else
       input.value = state[typedKey] === null ? "" : String(state[typedKey]);
@@ -371,7 +370,6 @@ modeFs.onchange = () => {
   const mode = modeFs.querySelector<HTMLInputElement>(
     'input[name="mode"]:checked'
   )!.value as Mode;
-  console.log(`New mode: ${mode}`);
   updateState({ mode });
 };
 
