@@ -180,10 +180,10 @@ targetBrewMassInput.onchange = () => {
   if (state.mode === "measure") {
     let value: number | null = parseFloat(targetBrewMassInput.value);
     if (isNaN(value)) value = null;
-    targetBrewGallonsInput.value = value === null ? "" : String(value / 3785);
+    targetBrewGallonsInput.value = value === null ? "" : (value / 3785).toPrecision(3);
     updateState({
       targetBrewMass: value,
-      targetBrewGallons: value === null ? null : value / 3785,
+      targetBrewGallons: value === null ? null : Number((value / 3785).toPrecision(3)),
     });
   } else inputChangeHandler("targetBrewMass", targetBrewMassInput);
 };
@@ -191,10 +191,10 @@ brewMassInput.onchange = () => {
   if (state.mode === "design") {
     let value: number | null = parseFloat(brewMassInput.value);
     if (isNaN(value)) value = null;
-    targetBrewGallonsInput.value = value === null ? "" : String(value / 3785);
+    targetBrewGallonsInput.value = value === null ? "" : (value / 3785).toPrecision(3);
     updateState({
       brewMass: value,
-      targetBrewGallons: value === null ? null : value / 3785,
+      targetBrewGallons: value === null ? null : Number((value / 3785).toPrecision(3)),
     });
   }
 };
@@ -212,7 +212,7 @@ function updateState(newStatePartial: Partial<AppState>) {
       newState.dose =
         ((newState.tds / 100) * newState.brewMass) /
         (newState.ext / 100 + (newState.tds / 100) * newState.absorptionRatio);
-      newState.dose = Math.round(newState.dose);
+      newState.dose = Number(newState.dose.toPrecision(3));
     } else newState.dose = null;
     //bevMass
     if (newState.dose && newState.brewMass && newState.absorptionRatio) {
@@ -326,6 +326,7 @@ function updateUI() {
     const x1 = y1 * (state.bevMass / state.dose);
     const x2 = y2 * (state.bevMass / state.dose);
     recipeLine.setAttribute("d", `M${x1} ${y1}L${x2} ${y2}`);
+    console.log(recipeLine.getAttribute("d"));
     recipeLine.style.display = "block";
   } else recipeLine.style.display = "none";
   if (state.ext !== null && state.tds !== null) {

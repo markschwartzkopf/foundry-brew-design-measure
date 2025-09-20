@@ -2,30 +2,42 @@
   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 57" font-family="system-ui, sans-serif" font-weight="600" font-size="1.4">
   <defs>
     <clipPath id="clipBox" clipPathUnits="userSpaceOnUse">
-      <rect x="14" y="0.80" width="12" height="0.8" />
+      <rect x="14" y="0.90" width="12" height="0.8" />
     </clipPath>
   </defs>
-  <!-- <rect width="60" height="57" fill="#fff" /> -->
-  <g id="translation" transform="translate(-48 99) scale(4 -60)">
-    <rect x="14" y="0.8" width="12" height="0.8" fill="#eeb" clip-path="url(#clipBox)" />
+  <rect width="60" height="57" fill="#fff" />
+  <g id="translation" transform="translate(-48 105) scale(4 -60)">
+    <rect x="14" y="0.9" width="12" height="0.8" fill="#eec" clip-path="url(#clipBox)" />
     <g id="liking-lines" fill="none" stroke-linecap="square" clip-path="url(#clipBox)">
-      <g id="cluster1" stroke="#B23">
-        <path stroke-width="12" vector-effect="non-scaling-stroke" d="M15.5 0.8Q18.95 0.996 19.92 0.8" />
-        <path stroke-width="7" vector-effect="non-scaling-stroke" d="M14.15 0.8C19.6 1.207 20.74 1.109 21.3 0.8" />
-        <path stroke-width="3" vector-effect="non-scaling-stroke" d="M14 0.872C20.1 1.381 22.35 1.42 22.3 0.8" />
+      <g id="cluster1" stroke="#B23" fill="#B234">
+        <path stroke-width="3" vector-effect="non-scaling-stroke" d="M15.3 0.9C17.98 1.03 20.0 1.07 20.95 0.9" />
+        <path stroke-width="3" vector-effect="non-scaling-stroke" d="M13.7 0.9C17.4 1.15 22.1 1.39 22.6 0.9" />
+        <path stroke-width="3" vector-effect="non-scaling-stroke" d="M12.4 0.9C19 1.35 24.3 1.69 23.7 0.9" />
+        <path stroke-width="3" vector-effect="non-scaling-stroke" d="M11.7 0.9C20.4 1.59 26.4 1.99 24.7 0.9" />
       </g>
-      <g id="cluster1" stroke="#17C">
-        <path stroke-width="12" vector-effect="non-scaling-stroke" d="M26 0.86C24.55 1.09 24.9 1.2 26 1.36" />
-        <path stroke-width="7" vector-effect="non-scaling-stroke" d="M25.62 0.8C22.87 1.12 23.55 1.26 26 1.449" />
-        <path stroke-width="3" vector-effect="non-scaling-stroke" d="M24.76 0.8C20.94 1.194 21.22 1.25 26 1.527" />
-        <path stroke-width="7" vector-effect="non-scaling-stroke" d="M14 1.113C15.98 1.29 15.34 1.43 14.14 1.6" />
-        <path stroke-width="3" vector-effect="non-scaling-stroke" d="M14 1.01C18.6 1.26 16.9 1.4 15.14 1.6" />
+      <g id="cluster2" stroke="#17C" fill="#17C4" >
+        <path stroke-width="3" vector-effect="non-scaling-stroke" d="M26 1.07C24.3 1.26 24.8 1.35 26 1.46" />
+        <path stroke-width="3" vector-effect="non-scaling-stroke" d="M26 0.97C22.5 1.27 21.4 1.33 26 1.555" />
+        
+        <path stroke-width="3" vector-effect="non-scaling-stroke" d="M14 1.3C14.9 1.4 14.9 1.5 14 1.625" />
+        <path stroke-width="3" vector-effect="non-scaling-stroke" d="M14 1.185C17 1.39 16.3 1.5 14 1.74" />
+        <path stroke-width="3" vector-effect="non-scaling-stroke" d="M14 1.11C19.7 1.38 18.7 1.43 14 1.81" />
+        
+      </g>
+      <g id="both-clusters" stroke="#0f02" fill="#0f02">
+        <ellipse stroke-width="3" transform="rotate(1.0 21.05 1.195)" rx="1.83" ry="0.08" cx="21.05" cy="1.195" vector-effect="non-scaling-stroke"/>
+        <!-- <ellipse stroke-width="3" transform="rotate(1.1 21.1 1.196)" rx="5.68" ry="0.248" cx="21.1" cy="1.196" vector-effect="non-scaling-stroke"/>
+        <ellipse stroke-width="3" transform="rotate(1.07 21.05 1.197)" rx="7.76" ry="0.337" cx="21.05" cy="1.197" vector-effect="non-scaling-stroke"/> -->
       </g>
     </g>
     <path id="recipe-line" clip-path="url(#clipBox)" d="M12 0.7L28.6 1.7" fill="none" stroke="#0c0" stroke-width="5" vector-effect="non-scaling-stroke" />
     <ellipse id="brew-point" cx="20.17" cy="1.1922" rx="0.15" ry="0.01" stroke="currentColor" fill="#fff" clip-path="url(#clipBox)" vector-effect="non-scaling-stroke"/>
-    <path id="ticks" fill="none" stroke="currentColor" stroke-width="3" vector-effect="non-scaling-stroke" d="M14 1.55h0.15M14 1.50h0.15M14 1.45h0.15M14 1.40h0.15M14 1.35h0.15M14 1.30h0.15M14 1.25h0.15M14 1.20h0.15M14 1.15h0.15M14 1.10h0.15M14 1.05h0.15M14 1.00h0.15M14 0.95h0.15M14 0.90h0.15M14 0.85h0.15M15 0.80v0.013M16 0.80v0.013M17 0.80v0.013M18 0.80v0.013M19 0.80v0.013M20 0.80v0.013M21 0.80v0.013M22 0.80v0.013M23 0.80v0.013M24 0.80v0.013M25 0.80v0.013" />
-    <rect x="14" y="0.8" width="12" height="0.8" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" />
+    <path id="ticks" fill="none" stroke="currentColor" stroke-width="3" vector-effect="non-scaling-stroke" 
+    d="M14 1.65h0.15
+    M14 1.60h0.15M14 1.55h0.15M14 1.50h0.15M14 1.45h0.15M14 1.40h0.15M14 1.35h0.15M14 1.30h0.15M14 1.25h0.15M14 1.20h0.15M14 1.15h0.15M14 1.10h0.15M14 1.05h0.15M14 1.00h0.15M14 0.95h0.15
+    M15 0.90v0.013M16 0.90v0.013M17 0.90v0.013M18 0.90v0.013M19 0.90v0.013M20 0.90v0.013M21 0.90v0.013
+    M22 0.90v0.013M23 0.90v0.013M24 0.90v0.013M25 0.90v0.013" />
+    <rect x="14" y="0.9" width="12" height="0.8" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" />
 
   </g>
   <g id="tasting-notes" font-weight="bold" text-anchor="middle" dominant-baseline="middle">
@@ -39,23 +51,23 @@
   </g>
   <text x="3" y="27" font-size="1.4em" transform="rotate(-90 3 27)" text-anchor="middle" dominant-baseline="middle">Total Dissolved Solids (%)</text>
   <g id="tds-labels" text-anchor="end" dominant-baseline="middle" fill="currentColor">
-    <text x="7.3" y="3">1.60</text>
-    <text x="7.3" y="6">1.55</text>
-    <text x="7.3" y="9">1.50</text>
-    <text x="7.3" y="12">1.45</text>
-    <text x="7.3" y="15">1.40</text>
-    <text x="7.3" y="18">1.35</text>
-    <text x="7.3" y="21">1.30</text>
-    <text x="7.3" y="24">1.25</text>
-    <text x="7.3" y="27">1.20</text>
-    <text x="7.3" y="30">1.15</text>
-    <text x="7.3" y="33">1.10</text>
-    <text x="7.3" y="36">1.05</text>
-    <text x="7.3" y="39">1.00</text>
-    <text x="7.3" y="42">.95</text>
-    <text x="7.3" y="45">.90</text>
-    <text x="7.3" y="48">.85</text>
-    <text x="7.3" y="51">.80</text>
+    <text x="7.3" y="3">1.70</text>
+    <text x="7.3" y="6">1.65</text>
+    <text x="7.3" y="9">1.60</text>
+    <text x="7.3" y="12">1.55</text>
+    <text x="7.3" y="15">1.50</text>
+    <text x="7.3" y="18">1.45</text>
+    <text x="7.3" y="21">1.40</text>
+    <text x="7.3" y="24">1.35</text>
+    <text x="7.3" y="27">1.30</text>
+    <text x="7.3" y="30">1.25</text>
+    <text x="7.3" y="33">1.20</text>
+    <text x="7.3" y="36">1.15</text>
+    <text x="7.3" y="39">1.10</text>
+    <text x="7.3" y="42">1.05</text>
+    <text x="7.3" y="45">1.00</text>
+    <text x="7.3" y="48">.95</text>
+    <text x="7.3" y="51">.90</text>
   </g>
   <text x="36" y="55" font-size="1.4em" text-anchor="middle" dominant-baseline="middle">Extraction (%)</text>
   <g id="extraction-labels" text-anchor="middle" dominant-baseline="middle" fill="currentColor">
